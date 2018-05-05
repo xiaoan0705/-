@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>阻止事件冒泡</title>
+		<style>
+			.div1{
+				width:200px;
+				height: 200px;
+				border: solid 1px red;
+			}
+			.div2{
+				width: 100px;
+				height: 100px;
+				border: solid 1px blue;
+				margin: 0 auto;
+			}
+		</style>
+		<script>
+			function f1 () {
+				alert("外层div");
+			}
+			function f2(e){
+				alert("内层div");
+				e.stopPropagation();
+			}
+			function f3(e){
+				alert("文字");
+				e.stopPropagation();
+			}
+		</script>
+	</head>
+	<body>
+		<div onclick="f1()" class="div1">
+			<div onclick="f2(event)"  class="div2">
+				<p onclick="f3(event)">阻止事件冒泡</p>
+			</div>
+		</div>
+	</body>
+</html>

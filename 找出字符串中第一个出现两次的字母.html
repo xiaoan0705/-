@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>找出字符串中第一个出现两次的字母</title>
+		<script>
+			var str="abcdakcfef";
+			var a=[];
+			var num=[];
+			for(var i=0;i<str.length;i++){
+				if(a.indexOf(str[i])<0){
+					a.push(str[i]);
+					num.push(1);//使存入的数字个数均为1
+				}
+				else{
+					num[a.indexOf(str[i])]++;//如果该字母已存在，令其个数+1
+				}
+				if(num[a.indexOf(str[i])]==2){
+					alert(str[i]);
+					break;
+				}
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function splice(num){
+				num=num+'';
+				var str="";
+				for(var i=num.length-1,j=1;i>=0;i--,j++){
+					if(j%3==0&&i!=0){
+						str+=num[i]+",";
+						continue;
+					}
+					str+=num[i];
+				}
+				return str.split("").reverse().join("");
+			}
+			document.write(splice(12345678));
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

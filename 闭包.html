@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function outer(){
+				var num=0;
+				return function inner(){  //添加return可以在函数外部访问。
+					num++;
+					document.write(num);
+				}
+			}
+			
+			var func1=new outer();
+			func1();//1
+			func1();//2
+			var func2=new outer();
+			func2();//1
+			func2();//2
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

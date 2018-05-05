@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>eval()</title>
+		<script type="text/javascript">  
+ 			document.write(eval("2+3")+"</br>");
+ 			//eval的作用域
+ 			function a(){
+ 				eval("var x=10");
+ 				document.write(x+"</br>");
+ 			}
+ 			a();
+ 			//document.write(x+"</br>");
+ 			
+ 			
+ 			function b(){
+ 				window.eval("var y=1");
+ 				document.write(y+"</br>");
+ 			}
+ 			b();
+ 			document.write(y+"</br>");
+ 			
+ 			//json字符串转换为json对象时可以用到eval
+ 			var json="{'name':'anny','age':20}";
+ 			var jsonObj=eval("("+json+")");
+ 			document.write(jsonObj.name);
+		</script>  
+	</head>
+	<body>
+	</body>
+</html>

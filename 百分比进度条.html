@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#Process{
+				width: 100%;
+				background: #ddd;
+			}
+			#bar{
+				width:0%;
+				height:30px;
+				background: red;
+				text-align: center;
+				line-height: 30px;
+				color: white;
+			}
+		</style>
+		
+		<script>
+			function move(){
+				var bar=document.getElementById("bar");
+				var width=10;
+				var id=setInterval(frame,10);
+				function frame(){
+					if(width>=100){
+						clearInterval(id);
+					}
+					else{
+						width++;
+						bar.style.width=width+"%";
+						bar.innerHTML=width+"%";
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="Process">
+			<div id="bar"></div>
+		</div>
+		<button onclick="move()">点我</button>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script>
+			function add(){
+				var ul=document.getElementById("myul");
+				var li=document.createElement("li");
+				li.innerHTML="newLI";
+				//获取li的长度
+				var count=ul.children.length;
+				//插入节点
+				//ul.insertBefore(li,ul.children[3]);
+				//添加节点
+				//ul.appendChild(li);
+				//移除某行节点
+				ul.removeChild(ul.children[2]);
+			}
+			
+		</script>
+	</head>
+	<body>
+		<div>
+			<ul id="myul">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ul>
+			<input type="button" onclick="add()" value="添加新节点">
+		</div>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script>
+			/*反转字符串*/
+			var str="abcdef";
+			var s=str.split("").reverse().join("");	
+			document.write(s+"<br>");
+			
+			var str="123456";
+			for(var i=str.length-1;i>=0;i--){
+				document.write(str.charAt(i));
+			}
+			document.write("<br>");
+			
+			/*数组插入元素*/
+			var a=["a","b","c","d"];
+			a.splice(2,0,"marry","break");
+			document.write(a+"<br>");
+			
+			/*数组删除元素*/
+			var b=["a","b","c","d"];
+			b.splice(2,2);
+			document.write(b+"<br>");
+			
+			/*数组转换为字符串*/
+			var str=a.toString();
+			document.write(a+"<br>");
+			
+			/*数组索引*/
+			var num=a.indexOf("marry");
+			document.write(num+"<br>");
+			
+			/*数组连接*/
+			document.write(a.concat(b)+"<br>");
+			
+			/*它把当前Array的每个元素都用指定的字符串连接起来，然后返回连接后的字符串*/
+			document.write(a.join("-")+"<br>");
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

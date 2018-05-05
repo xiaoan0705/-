@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>正则表达式</title>
+		
+		<script>
+			var result='a1b2c3d1'.search('b');
+			document.write(result+'<br>');
+			
+			document.write('a1b2c3d1'.replace(/[abc]/g,'x')+'<br>');
+			
+			document.write('a1b2c3x4z7'.replace(/[a-z]/g,'Q')+'<br>');
+			
+			document.write('a1b2c3x4z7ASEVFD'.replace(/[a-zA-Z]/g,'Q')+'<br>');
+			
+			document.write('2018-02-12'.replace(/[0-9]/g,'A')+'<br>');
+			document.write('2018-02-12'.replace(/[0-9-]/g,'A')+'<br>');
+			
+			document.write('This is a boy'.replace(/is/g,'0')+'<br>');
+			document.write('This is a boy'.replace(/\bis\b/g,'0')+'<br>');
+			document.write('This is a boy'.replace(/\Bis\b/g,'0')+'<br>');
+			
+			
+			document.write('12345678'.replace(/\d{3,6}/g,'X')+'<br>');
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			var compare=function(arr1,arr2){
+				var arr3=[];
+				arr3=arr2.reverse();
+				var i=0;
+				var j=0;
+				var str="";
+				while(i!=arr1.length&&j!=arr3.length){
+					if(arr1[i]==arr3[j]){
+						document.write(arr1[i]+",");
+						i++;
+						j++;
+					}
+					else{
+						arr1[i]>arr3[j]?j++:i++;
+					}
+				}
+			}
+			var Arr1=[3, 5, 7, 8, 10, 12];
+			var Arr2=[15, 10, 8, 7, 4, 3, 1];
+			compare(Arr1,Arr2);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

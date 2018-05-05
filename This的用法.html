@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			//在一般函数中this指代全局对象
+			function test1(){
+				this.x=1;
+				document.write(this.x+"<br>");
+			}
+			test1();
+			
+			//作为对象方法调用，this指代上级对象
+			function test2(){
+				document.write(this.x+"<br>");
+			}
+			var o={};
+			o.x=1;
+			o.m=test2;
+			o.m();
+			
+			//作为构造函数的调用，this指代new出的对象
+			function test3(){
+				this.y=1;
+			}
+			var obj=new test3();
+			document.write(obj.y+"<br>");
+			var y=2;
+			function test4(){
+				this.y=1;
+			}
+			var obj1=new test4();
+			document.write(y+"<br>");
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

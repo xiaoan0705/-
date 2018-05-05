@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			var my=setInterval(function(){myTimer()},1000);
+			function myTimer(){
+				var d=new Date();
+				var t=d.toLocaleTimeString();
+				document.getElementById("demo").innerHTML=t;
+			}
+			function myStop(){
+				clearInterval(my);
+			}
+		</script>
+	</head>
+	<body>
+		<P>在页面显示一个时钟</p>
+		<p id="demo"></p>
+		<button onclick="myStop()">停止</button>
+	</body>
+</html>

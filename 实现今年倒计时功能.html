@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script>
+			var txt=document.getElementById("input");
+			setInterval(function(){
+				//获取系统当前时间
+				var now=new Date();
+				//实例化今年跨年时间
+				var targetDate=new Date(now.getFullYear()+1,0,1);
+				//跨年时间与此时此刻时间差(毫秒)
+				var long=targetDate-now;
+				var leftDay=parseInt(long/1000/60/60/24);
+				long=long%(1000*60*60*24);
+				var leftHour=parseInt(long/1000/60/60);
+				long=long%(1000*60*60);
+				var leftMinute=parseInt(long/1000/60);
+				long=long%(1000*60);
+				var leftSecond=parseInt(long/1000);
+				txt.value=now.getFullYear()+"年还剩"+leftDay+"天"+leftHour+"时"+
+				leftMinute+"分"+leftSecond+"秒";
+			},1000);
+		</script>
+	</head>
+	<body>
+		<input type="text" value="" id="input" size="500">
+	</body>
+</html>

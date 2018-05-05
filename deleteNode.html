@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>删除节点</title>
+		
+		<script>
+			function BinaryTree(){
+				var Node=function(key){
+					this.key=key;
+					this.left=null;
+					this.right=null;
+				}
+				
+				var root=null;
+				function insertNode(node,newNode){
+					if(newNode.key<node.key){
+						if(node.left===null){
+							node.left=newNode;
+						}
+						else{
+							insertNode(node.left,newNode);
+						}
+					}
+					else{
+						if(node.right===null){
+							node.right=newNode;
+						}
+						else{
+							insertNode(node.right,newNode);
+						}
+					}
+				}
+				
+				/*插入节点*/
+				this.insert=function(key){
+					var newNode=new Node(key);/*创建新节点*/
+					if(root==null){
+						root=newNode;
+					}
+					else{
+						insertNode(root,newNode);
+					}
+				}
+				
+				var removeNode=function(node,key){
+					if(node===null){
+						return null;
+					}
+					if(key<node.key){
+						node.left=removeNode(node.left,key);
+					}
+					else if(key>node.key){
+						node.right=removeNode(node.right,key);
+					}
+					else{
+						if(node.left===null&&node.right===null){
+							node=null;
+							return node;
+						}
+					}
+				}
+				this.remove=function(key){
+					root=removeNode(root,key);
+				}
+			}
+			
+			var nodes=[8,3,10,1,6,14,4,7,13];
+			var binaryTree=new BinaryTree();
+			nodes.forEach(function(key){
+				binaryTree.insert(key);
+			});
+			binaryTree.remove(1);
+			alert(nodes);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

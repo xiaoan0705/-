@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>查找结点</title>
+	<script>
+		function BinaryTree(){
+				var Node=function(key){
+					this.key=key;
+					this.left=null;
+					this.right=null;
+				}
+				
+				var root=null;
+				function insertNode(node,newNode){
+					if(newNode.key<node.key){
+						if(node.left===null){
+							node.left=newNode;
+						}
+						else{
+							insertNode(node.left,newNode);
+						}
+					}
+					else{
+						if(node.right===null){
+							node.right=newNode;
+						}
+						else{
+							insertNode(node.right,newNode);
+						}
+					}
+				}
+				
+				/*插入节点*/
+				this.insert=function(key){
+					var newNode=new Node(key);/*创建新节点*/
+					if(root==null){
+						root=newNode;
+					}
+					else{
+						insertNode(root,newNode);
+					}
+				}
+				
+				var minNode=function(node){
+					if(node){
+						while(node&&node.left!=null){
+							node=node.left;
+						}
+						return node.key;
+					}
+					return null;
+				}
+				
+				this.min=function(){
+					return minNode(root);
+				}
+				
+				
+				var maxNode=function(node){
+					if(node){
+						while(node&&node.right!=null){
+							node=node.right;
+						}
+						return node.key;
+					}
+					return null;
+				}
+				this.max=function(){
+					return maxNode(root);
+				}
+				
+				var searchNode=function(node,num){
+					if(num===null){
+						return false;
+					}
+					if(num<node.key){
+						return searchNode(node.left,num);
+					}
+					else if(num>node.key){
+						return searchNode(node.right,num);
+					}
+					else{
+						return true;
+					}
+				}
+				this.search=function(num){
+					return searchNode(root,num);
+				}
+			}
+			
+			var nodes=[8,3,10,1,6,14,4,7,13];
+			var binaryTree=new BinaryTree();
+			nodes.forEach(function(key){
+				binaryTree.insert(key);
+			});
+			
+			alert("最小值是："+binaryTree.min()+",最大值是："+binaryTree.max());
+			alert(binaryTree.search(3)?'3 is found':'3 is not found');
+			alert(binaryTree.search(9)?'9 is found':'9 is not found');
+	</script>
+	</head>
+	<body>
+	</body>
+</html>
