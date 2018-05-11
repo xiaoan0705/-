@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<title>call()和apply()的区别</title>
 		<script> 
-			//call()vDVD是v
+			//call()
 			var value="global对象";			
 			function obj(){
 				this.value="对象！";
@@ -12,7 +12,7 @@
 			function func1(a,b){
 				alert(this.value);
 			}
-			
+			修改
 			window.func1();
 			func1.call(window,3,4);
 			func1.call(obj());

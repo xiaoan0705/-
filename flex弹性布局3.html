@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>排列显示与有无缩放</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		header,footer{
+			height: 100px;
+			background: yellow;
+		}
+		.main{
+			display: flex;
+		}
+		.box1{
+			width: 100px;
+			background: blue;
+			order: 1;
+		}
+		.box3{
+			width: 100px;
+			background: red;
+			order: 3;
+		}
+		.box2{
+			height: 400px;
+			background: green;
+			flex-grow: 1;
+			order: 2;
+		}
+	</style>
+</head>
+<body>
+	<header>header</header>
+	<div class="main">
+		<div class="box1">固定不动</div>
+		<div class="box2">缩放</div>
+		<div class="box3">固定不动</div>
+	</div>
+	<footer>footer</footer>
+</body>
+</html>
