@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>考察box-sizing:border-box</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.container{
+				display: flex;
+			}
+			.demo1,.demo2,.demo3{
+				flex:1;
+				height: 300px;				
+				border: solid 1px red;
+			}
+			.container1{
+				margin-top: 50px;
+			}
+			.demo11,.demo21,.demo31{
+				float: left;
+				box-sizing: border-box;
+				width: 33.3%;
+				height: 300px;				
+				border: solid 0.5px red;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<!--法1：使用flex布局-->
+		<div class="container">
+			<div class='demo1'></div>
+			<div class='demo2'></div>
+			<div class='demo3'></div>
+		</div>
+		<!--法2：使用box-sizing属性：border-box,
+		如果只有float，由于边框也占据大小，使其不能显示在同一行
+		但是border-box会把padding和border全部定义在宽高里-->
+		<div class="container1">
+			<div class='demo11'></div>
+			<div class='demo21'></div>
+			<div class='demo31'></div>
+		</div>
+		
+	</body>
+</html>
